@@ -5,9 +5,9 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 
-SRCS = ft_handle_int.c ft_handle_char.c ft_handle_hex_lower.c \
+SRCS = ft_printf.c ft_handle_int.c ft_handle_char.c ft_handle_hex_lower.c \
 	   ft_handle_hex_upper.c ft_handle_pointer.c ft_handle_unsigned.c \
-	   ft_handle_string.c  ft_printf.c utils.c
+	   ft_handle_string.c utils.c
 
 OBJS = $(SRCS:.c=.o)
 

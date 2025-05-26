@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:29:50 by odana             #+#    #+#             */
-/*   Updated: 2025/05/25 00:58:44 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/26 07:19:57 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_handle_pointer(void	*ptr)
 	}
 	hex = (unsigned long)ptr;
 	ft_putstr_fd("0x", 1);
+	ft_puthex_lower_fd((unsigned long)hex, 1);
 	len = 2;
 	if (hex == 0)
 		return (len + 1);
@@ -33,6 +34,5 @@ int	ft_handle_pointer(void	*ptr)
 		hex /= 16;
 		len++;
 	}
-	ft_puthex_fd((unsigned long)hex, 1);
 	return (len);
 }

@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/25 00:50:29 by odana             #+#    #+#             */
-/*   Updated: 2025/05/25 00:54:29 by odana            ###   ########.fr       */
+/*   Created: 2025/05/26 07:10:59 by odana             #+#    #+#             */
+/*   Updated: 2025/05/26 07:25:04 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft/libft.h"
+#include"ft_printf.h"
+#include<stdio.h>
 
-int	main(void)
+int main(void)
 {
-	ft_printf("lol");
+    printf("\n%d",ft_printf("%i", -45));
 }
