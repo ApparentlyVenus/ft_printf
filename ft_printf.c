@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 06:51:45 by odana             #+#    #+#             */
-/*   Updated: 2025/05/26 07:10:54 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/27 07:47:12 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,16 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
-			len += get_conversion(format[i], args);
+			if (is_specifier(format[i]))
+				len += get_conversion(format[i++], args);
+			else
+			{
+				len += write(1, "%", 1);
+				len += write(1, &format[i++], 1);
+			}
 		}
 		else
-		{
-			write(1, &format[i], 1);
-			len++;
-		}
-		i++;
+			len += write(1, &format[i++], 1);
 	}
 	va_end(args);
 	return (len);

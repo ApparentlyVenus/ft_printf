@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 08:27:56 by odana             #+#    #+#             */
-/*   Updated: 2025/05/25 01:01:02 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/27 07:15:09 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 int	ft_printf(const char *format, ...);
 int	get_conversion(char specifier, va_list args);
 int	is_specifier(char c);
+int	ft_hex_len(unsigned int c);
+int	ft_pointer_len(unsigned long n);
 
 int	ft_handle_char(char c);
 int	ft_handle_string(char *str);
