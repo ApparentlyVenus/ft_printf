@@ -1,36 +1,37 @@
 NAME = libftprintf.a
-
+LIBFTNAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar
-ARFLAGS = rcs
+CFLAGS = -Wall -Werror -Wextra
+LIBFTDIR = ./libft
 
-SRCS = ft_printf.c ft_handle_int.c ft_handle_char.c ft_handle_hex_lower.c \
-	   ft_handle_hex_upper.c ft_handle_pointer.c ft_handle_unsigned.c \
-	   ft_handle_string.c utils.c
+SRCS = 	ft_printf.c utils.c \
+		ft_handle_pointer.c \
+		ft_handle_unsigned.c \
+		ft_handle_string.c \
+		ft_handle_int.c \
+		ft_handle_char.c \
+		ft_handle_hex_lower.c \
+		ft_handle_hex_upper.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
-LIBFT_DIR = libft
-LIBFT_A = $(LIBFT_DIR)/libft.a
-
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT_A)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+makelibft:
+	@make -C $(LIBFTDIR)
+	@cp $(LIBFTDIR)/$(LIBFTNAME) .
+	@mv $(LIBFTNAME) $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(LIBFT_A):
-	make -C $(LIBFT_DIR)
+$(NAME): makelibft $(OBJS)
+	@ar -r $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
-	make clean -C $(LIBFT_DIR)
-
+	@rm -f $(OBJS)
+	@cd $(LIBFTDIR) && make clean
+	
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFT_DIR)
-
+	@rm -f $(NAME)
+	@cd $(LIBFTDIR) && make fclean
+	
 re: fclean all
