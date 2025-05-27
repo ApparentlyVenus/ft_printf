@@ -6,7 +6,7 @@
 /*   By: odana <odana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:13:03 by odana             #+#    #+#             */
-/*   Updated: 2025/05/25 00:31:16 by odana            ###   ########.fr       */
+/*   Updated: 2025/05/27 07:08:24 by odana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,19 @@ int	get_conversion(char specifier, va_list args)
 		return (1);
 	}
 	return (0);
+}
+
+int	ft_hex_len(unsigned int n)
+{
+	int	len;
+
+	len = 1;
+	while (n >= 16)
+	{
+		n /= 16;
+		len++;
+	}
+	return (len);
 }
 
 int	is_specifier(char c)
