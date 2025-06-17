@@ -59,17 +59,17 @@ make re         # Recompile everything
 
 ```
 ft_printf/
-├── src/
-│   ├── ft_printf.c         # Main printf function
-│   ├── ft_parse.c          # Format string parsing
-│   ├── ft_print_char.c     # Character printing
-│   ├── ft_print_string.c   # String printing
-│   ├── ft_print_number.c   # Number printing
-│   ├── ft_print_hex.c      # Hexadecimal printing
-│   ├── ft_print_pointer.c  # Pointer printing
-│   └── ft_utils.c          # Utility functions
-├── inc/
-│   └── ft_printf.h         # Header file
+├── libft/                  # Custom C library functions
+├── ft_handle_char.c        # Character format handling
+├── ft_handle_hex_lower.c   # Lowercase hex format handling
+├── ft_handle_hex_upper.c   # Uppercase hex format handling
+├── ft_handle_int.c         # Integer format handling
+├── ft_handle_pointer.c     # Pointer format handling
+├── ft_handle_string.c      # String format handling
+├── ft_handle_unsigned.c    # Unsigned integer format handling
+├── ft_printf.c             # Main printf function
+├── ft_printf.h             # Header file
+├── utils.c                 # Utility functions
 ├── Makefile               # Build configuration
 └── README.md              # This file
 ```
