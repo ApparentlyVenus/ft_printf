@@ -1,4 +1,4 @@
-# ft_printf - Custom Printf Implementation
+# ft_printf - Custom Printf Implementation ✔️ 100/100
 
 A complete reimplementation of the C standard library's `printf` function with support for multiple format specifiers and flags.
 
